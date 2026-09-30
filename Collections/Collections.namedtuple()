@@ -1,0 +1,11 @@
+from collections import namedtuple
+
+n = int(input())
+Student = namedtuple("Student", input().split())
+marks_index = Student._fields.index("MARKS")
+
+total = 0
+for _ in range(n):
+    total += int(input().split()[marks_index])
+
+print(f"{total / n:.2f}")
