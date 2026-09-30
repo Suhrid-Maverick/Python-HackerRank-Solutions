@@ -1,0 +1,1 @@
+print(''.join(sorted(input(), key=lambda c: (c.isdigit(), c.isupper(), c.isdigit() and int(c) % 2 == 0, c))))
