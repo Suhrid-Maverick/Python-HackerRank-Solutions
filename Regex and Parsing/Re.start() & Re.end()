@@ -1,0 +1,13 @@
+import re
+
+s = input()
+k = input()
+
+pattern = re.compile(r'(?=(' + re.escape(k) + r'))')
+matches = list(pattern.finditer(s))
+
+if matches:
+    for m in matches:
+        print((m.start(1), m.end(1) - 1))
+else:
+    print((-1, -1))
