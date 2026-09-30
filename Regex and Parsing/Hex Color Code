@@ -1,0 +1,32 @@
+import re
+import sys
+
+def main():
+    n = int(sys.stdin.readline())
+    pattern = re.compile(r'#[0-9A-Fa-f]{6}|#[0-9A-Fa-f]{3}')
+    inside = False
+
+    for _ in range(n):
+        line = sys.stdin.readline().rstrip('\n')
+
+        # Handle opening brace: everything after it is inside a block
+        if '{' in line:
+            inside = True
+            line = line.split('{', 1)[1]
+
+        # Handle closing brace: process the part before it, then exit block
+        if '}' in line:
+            part = line.split('}', 1)[0]
+            if inside:
+                for match in pattern.findall(part):
+                    print(match)
+            inside = False
+            continue
+
+        # If we're inside a block, extract all hex codes from this line
+        if inside:
+            for match in pattern.findall(line):
+                print(match)
+
+if __name__ == '__main__':
+    main()
