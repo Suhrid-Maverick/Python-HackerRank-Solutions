@@ -1,0 +1,12 @@
+import sys
+from collections import Counter
+
+data = sys.stdin.read().split()
+k = int(data[0])
+rooms = data[1:]
+
+count = Counter(rooms)
+for room, c in count.items():
+    if c == 1:
+        print(room)
+        break
