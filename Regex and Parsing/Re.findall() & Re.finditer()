@@ -1,10 +1,5 @@
 import re
-import sys
 
-s = sys.stdin.read()
-matches = re.findall(r'[aeiouAEIOU]{2,}', s)
+m = re.findall(r'(?<=[bcdfghjklmnpqrstvwxyz])([aeiou]{2,})(?=[bcdfghjklmnpqrstvwxyz])', input(), flags=re.I)
 
-if matches:
-    sys.stdout.write('\n'.join(matches) + '\n')
-else:
-    sys.stdout.write('-1\n')
+print('\n'.join(m) if m else -1)
