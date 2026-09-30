@@ -1,0 +1,10 @@
+import sys
+
+data = sys.stdin.read().split()
+n = int(data[0])
+students = [(data[i], float(data[i + 1])) for i in range(1, 2 * n + 1, 2)]
+
+second_lowest = sorted({grade for _, grade in students})[1]
+
+for name in sorted(name for name, grade in students if grade == second_lowest):
+    print(name)
