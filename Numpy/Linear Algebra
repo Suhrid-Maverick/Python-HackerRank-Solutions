@@ -1,0 +1,7 @@
+import numpy as np
+import sys
+
+data = sys.stdin.read().split()
+n = int(data[0])
+a = np.array(data[1:1 + n * n], float).reshape(n, n)
+print(round(np.linalg.det(a), 2))
