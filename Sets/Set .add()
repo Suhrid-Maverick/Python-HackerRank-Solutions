@@ -1,0 +1,5 @@
+import sys
+
+data = sys.stdin.read().split("\n")
+n = int(data[0])
+print(len(set(data[1:n + 1])))
