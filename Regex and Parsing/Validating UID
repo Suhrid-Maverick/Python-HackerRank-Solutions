@@ -1,0 +1,11 @@
+import re
+
+for _ in range(int(input())):
+    s = input().strip()
+    if (re.fullmatch(r'[A-Za-z0-9]{10}', s)
+            and len(set(s)) == 10
+            and sum(c.isupper() for c in s) >= 2
+            and sum(c.isdigit() for c in s) >= 3):
+        print("Valid")
+    else:
+        print("Invalid")
