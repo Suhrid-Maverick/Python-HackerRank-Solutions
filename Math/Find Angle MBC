@@ -1,0 +1,8 @@
+import math
+import sys
+
+ab = int(sys.stdin.readline())
+bc = int(sys.stdin.readline())
+
+angle = round(math.degrees(math.atan(ab / bc)))
+print(f"{angle}\xb0")
