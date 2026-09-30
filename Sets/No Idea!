@@ -1,0 +1,15 @@
+def calculate_happiness(arr, A, B):
+    happiness = 0
+    for element in arr:
+        if element in A:
+            happiness += 1
+        elif element in B:
+            happiness -= 1
+    print(happiness)
+
+if __name__ == '__main__':
+    n, m = input().split()
+    arr = input().split()
+    A = set(input().split())
+    B = set(input().split())
+    calculate_happiness(arr, A, B)
