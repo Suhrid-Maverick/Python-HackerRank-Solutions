@@ -1,0 +1,8 @@
+import numpy as np
+import sys
+
+data = sys.stdin.read().split()
+n, m = int(data[0]), int(data[1])
+arr = np.array(data[2:2 + n * m], int).reshape(n, m)
+print(np.transpose(arr))
+print(arr.flatten())
