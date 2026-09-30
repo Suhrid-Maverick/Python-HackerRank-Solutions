@@ -1,0 +1,33 @@
+import sys
+
+def main():
+    data = sys.stdin.read().split()
+    n = int(data[0])
+    lst = []
+    idx = 1
+    out = []
+
+    for _ in range(n):
+        cmd = data[idx]
+        idx += 1
+        if cmd == "insert":
+            lst.insert(int(data[idx]), int(data[idx + 1]))
+            idx += 2
+        elif cmd == "print":
+            out.append(str(lst))
+        elif cmd == "remove":
+            lst.remove(int(data[idx]))
+            idx += 1
+        elif cmd == "append":
+            lst.append(int(data[idx]))
+            idx += 1
+        elif cmd == "sort":
+            lst.sort()
+        elif cmd == "pop":
+            lst.pop()
+        elif cmd == "reverse":
+            lst.reverse()
+
+    sys.stdout.write("\n".join(out))
+
+main()
