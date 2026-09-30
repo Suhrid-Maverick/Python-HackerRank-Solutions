@@ -1,0 +1,19 @@
+from collections import Counter
+import sys
+
+def main():
+    data = sys.stdin.read().split()
+    idx = 0
+    x = int(data[idx]); idx += 1
+    sizes = list(map(int, data[idx:idx + x])); idx += x
+    n = int(data[idx]); idx += 1
+    stock = Counter(sizes)
+    earned = 0
+    for _ in range(n):
+        size = int(data[idx]); price = int(data[idx + 1]); idx += 2
+        if stock[size] > 0:
+            stock[size] -= 1
+            earned += price
+    print(earned)
+
+main()
