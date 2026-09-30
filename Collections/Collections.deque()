@@ -1,0 +1,20 @@
+from collections import deque
+import sys
+
+data = sys.stdin.read().split()
+n = int(data[0])
+d = deque()
+idx = 1
+
+for _ in range(n):
+    cmd = data[idx]; idx += 1
+    if cmd == "append":
+        d.append(int(data[idx])); idx += 1
+    elif cmd == "appendleft":
+        d.appendleft(int(data[idx])); idx += 1
+    elif cmd == "pop":
+        d.pop()
+    else:  # popleft
+        d.popleft()
+
+print(*d)
