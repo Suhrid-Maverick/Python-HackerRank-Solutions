@@ -1,0 +1,12 @@
+import re
+
+n, m = map(int, input().split())
+matrix = [input() for _ in range(n)]
+
+# Read column by column to form the decoded string
+decoded = ''.join(matrix[i][j] for j in range(m) for i in range(n))
+
+# Replace any sequence of non-alphanumeric characters between two alphanumeric characters with a single space
+decoded = re.sub(r'(?<=[a-zA-Z0-9])[^a-zA-Z0-9]+(?=[a-zA-Z0-9])', ' ', decoded)
+
+print(decoded)
