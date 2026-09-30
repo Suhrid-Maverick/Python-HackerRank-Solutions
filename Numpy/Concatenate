@@ -1,0 +1,9 @@
+import numpy as np
+import sys
+
+data = sys.stdin.read().split()
+n, m, p = map(int, data[:3])
+idx = 3
+a = np.array(data[idx:idx + n * p], int).reshape(n, p); idx += n * p
+b = np.array(data[idx:idx + m * p], int).reshape(m, p)
+print(np.concatenate((a, b), axis=0))
