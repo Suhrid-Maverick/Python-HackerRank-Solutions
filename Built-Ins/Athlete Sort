@@ -1,0 +1,18 @@
+import sys
+
+data = sys.stdin.read().split()
+idx = 0
+
+n = int(data[idx]); m = int(data[idx + 1]); idx += 2
+
+rows = []
+for _ in range(n):
+    rows.append(data[idx:idx + m])
+    idx += m
+
+k = int(data[idx])
+
+rows.sort(key=lambda r: int(r[k]))
+
+for r in rows:
+    print(" ".join(r))
