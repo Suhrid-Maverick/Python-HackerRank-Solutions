@@ -1,0 +1,17 @@
+import sys
+
+data = sys.stdin.read().split()
+i = 0
+
+n = int(data[i]); i += 1
+a = set(data[i:i + n]); i += n
+
+m = int(data[i]); i += 1
+
+for _ in range(m):
+    cmd = data[i]; i += 1
+    k = int(data[i]); i += 1
+    b = set(data[i:i + k]); i += k
+    getattr(a, cmd)(b)
+
+print(sum(map(int, a)))
