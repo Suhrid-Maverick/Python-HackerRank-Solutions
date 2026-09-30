@@ -1,0 +1,8 @@
+n = int(input())
+d = {}
+for _ in range(n):
+    *name, price = input().split()
+    item = " ".join(name)
+    d[item] = d.get(item, 0) + int(price)
+for item, price in d.items():
+    print(item, price)
