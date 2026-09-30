@@ -1,0 +1,5 @@
+n, m = map(int, input().split())
+scores = [list(map(float, input().split())) for _ in range(m)]
+
+for student in zip(*scores):
+    print(f"{sum(student) / m:.2f}")
