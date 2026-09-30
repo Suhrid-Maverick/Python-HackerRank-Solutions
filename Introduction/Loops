@@ -1,0 +1,4 @@
+import sys
+
+n = int(sys.stdin.readline())
+sys.stdout.write("\n".join(str(i * i) for i in range(n)))
