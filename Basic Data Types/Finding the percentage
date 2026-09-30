@@ -1,0 +1,13 @@
+import sys
+
+lines = sys.stdin.read().strip().splitlines()
+n = int(lines[0])
+
+scores = {}
+for line in lines[1:n + 1]:
+    parts = line.split()
+    scores[parts[0]] = list(map(float, parts[1:]))
+
+query = lines[n + 1].strip()
+avg = sum(scores[query]) / len(scores[query])
+print(f"{avg:.2f}")
