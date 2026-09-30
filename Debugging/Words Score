@@ -1,0 +1,6 @@
+def score_words(words):
+    return sum(2 if sum(c in 'aeiouy' for c in w) % 2 == 0 else 1 for w in words)
+
+n = int(input())
+words = input().split()
+print(score_words(words))
