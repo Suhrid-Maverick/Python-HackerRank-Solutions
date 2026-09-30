@@ -1,0 +1,10 @@
+import re
+import sys
+
+s = sys.stdin.read()
+matches = re.findall(r'[aeiouAEIOU]{2,}', s)
+
+if matches:
+    sys.stdout.write('\n'.join(matches) + '\n')
+else:
+    sys.stdout.write('-1\n')
